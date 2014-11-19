@@ -1,0 +1,17 @@
+<h1>Listing Job Queue Items</h1>
+ 
+<table>
+  <tr>
+    <th>Job ID</th>
+    <th>File</th>
+	<th>Status</th>
+  </tr>
+ 
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item.Job.id %></td>
+      <td><%= item.Job.file %></td>
+	  <td><%= item.Job.status %></td>
+    </tr>
+  <% end %>
+</table>
