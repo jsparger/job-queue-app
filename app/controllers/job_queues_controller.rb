@@ -1,5 +1,6 @@
 require 'job_common'
 class JobQueuesController < ApplicationController
+  load_and_authorize_resource
   include JobCommon
   
   def new
@@ -13,7 +14,6 @@ class JobQueuesController < ApplicationController
   
   def pop
     item = JobQueue.pop
-    puts item
     render json: item.to_json(:only => [:id, :file])
   end
   
