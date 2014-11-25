@@ -1,5 +1,6 @@
 require 'job_common'
 class JobsController < ApplicationController
+  load_and_authorize_resource
   include JobCommon
   
   def new
