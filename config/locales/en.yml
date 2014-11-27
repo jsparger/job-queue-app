@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user:
+    login_first: "Log in to view this page."
+    not_authorized: "Not authorized to view this page."

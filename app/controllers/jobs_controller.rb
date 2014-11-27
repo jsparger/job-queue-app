@@ -4,12 +4,22 @@ class JobsController < ApplicationController
   include JobCommon
   
   def new
+    puts "--------BOB MAN------------------"
   end
   
   def create
-      # render plain: params[:job].inspect
-      @job = Job.create!(job_params)
-      redirect_to @job
+    puts "--------OH MY GOSH------------------"
+    item = Job.create!(job_params)
+    # redirect_to action: "index"
+    puts "woah baby"
+    respond_to do |format|
+      format.html do
+        redirect_to @job
+      end
+        format.json { render json: { :message => "success", :url => request.url } }
+    end
+
+    puts "--------OH MY GOSH------------------"
   end
   
   def index
@@ -18,6 +28,7 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find(params[:id])
+    @job = Job.first
   end
     
 end
