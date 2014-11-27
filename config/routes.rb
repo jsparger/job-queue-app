@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "jobs#index"
+  root to: "home#index"
   resources :jobs
-  resources :job_queues, :path => "job_queue" do
+  resources :job_queue, :controller => :job_queue do
     collection do
       get 'pop'
     end

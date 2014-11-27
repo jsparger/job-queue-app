@@ -32,7 +32,8 @@ gem 'railq', github: 'jsparger/railq'
 # Use devise for authentication
 gem 'devise'
 
-# Use CanCanCan for authorization
+# Use CanCanCan for authorization 
+# (CanCanCan is the active fork of CanCan with Rails 4 fixes)
 gem 'cancancan', '~> 1.9'
 
 # Use ActiveModel has_secure_password

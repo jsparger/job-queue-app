@@ -1,5 +1,5 @@
 require 'job_common'
-class JobQueuesController < ApplicationController
+class JobQueueController < ApplicationController
   load_and_authorize_resource
   include JobCommon
   
