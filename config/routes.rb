@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       get 'pop'
     end
   end
+  resources :home, :only => :index, :controller => :home
 end

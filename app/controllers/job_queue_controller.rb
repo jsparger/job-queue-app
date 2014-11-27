@@ -9,12 +9,18 @@ class JobQueueController < ApplicationController
   def create
     item = Job.create!(job_params)
     JobQueue.push(item)
-    redirect_to action: "index"
+    respond_to do |format|
+      format.html { redirect_to action: :index }
+      format.json { render json: { :message => "success", :url => request.url } }
+    end
   end
   
   def pop
     item = JobQueue.pop
-    render json: item.to_json(:only => [:id, :file])
+    respond_to do |format|
+      format.html { redirect_to item }
+      format.json { render json: item.to_json(:only => [:id, :file]) }
+    end
   end
   
   def show
